@@ -8,30 +8,6 @@ const UserSchema = new Schema({
     type: String,
     required: false
   },
-  age: {
-    type: Number,
-    required: true
-  },
-  gender: {
-    type: String,
-    required: false
-  },
-  language: {
-    type: String,
-    required: false
-  },
-  country: {
-    type: String,
-    required: false
-  },
-  location: {
-    type: String,
-    required: false
-  },
-  interests: {
-    type: Array,
-    required: false
-  },
   email: {
     type: String,
     required: true
@@ -47,28 +23,6 @@ const UserSchema = new Schema({
   lastName: {
     type: String,
     required: false
-  },
-  followers: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "users"
-    }
-  ],
-  following: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "users"
-    }
-  ],
-  boards: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "boards"
-    }
-  ],
-  profilePhotoUrl: {
-    type: String,
-    default: "https://i.imgur.com/AItCxSs.jpg"
   },
   date: {
     type: Date,
