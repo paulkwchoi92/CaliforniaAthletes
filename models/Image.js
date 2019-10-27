@@ -8,10 +8,10 @@ const ImageSchema = new Schema({
     type: String,
     required: true
   },
-  pins: [
+  users: [
     {
       type: Schema.Types.ObjectId,
-      ref: "pins"
+      ref: "users"
     }
   ],
   date: {
