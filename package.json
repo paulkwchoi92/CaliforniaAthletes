@@ -4,7 +4,13 @@
   "description": "CaliforniaAthletesWebApp",
   "main": "app.js",
   "scripts": {
-    "test": "npm run webpack"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "server:debug": "nodemon --inspect app.js",
+    "frontend-install": "npm install --prefix frontend",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server:debug\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -17,11 +23,14 @@
   },
   "homepage": "https://github.com/paulkwchoi92/CaliforniaAthletes#readme",
   "dependencies": {
+    "aws-sdk": "^2.556.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.7",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^11.1.0"
