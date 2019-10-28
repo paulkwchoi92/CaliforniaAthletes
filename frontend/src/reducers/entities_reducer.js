@@ -3,12 +3,10 @@ import { combineReducers } from "redux";
 import users from "./users_reducer";
 // import pins from "./pins_reducer";
 // import boards from "./boards_reducer";
-// import images from "./images_reducer";
-
+import images from "./images_reducer";
+import schedules from "./schedules_reducer"
 export default combineReducers({
-  interests,
   users,
-  pins,
-  boards,
-  images
+  images,
+  schedules
 });
