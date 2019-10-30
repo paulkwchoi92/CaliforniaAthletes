@@ -57,9 +57,7 @@ export const login = user => dispatch =>
       APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
-      dispatch(closeModal());
       dispatch(receiveUser(user));
-      dispatch(fetchPins([]));
     })
     .catch(err => {
       dispatch(receiveErrors(err.response.data));
